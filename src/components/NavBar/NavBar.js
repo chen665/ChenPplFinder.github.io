@@ -2,25 +2,24 @@ import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import { Link  } from "react-router-dom";
 
-const NavBar = () => {
-  const [value, setValue] = useState(0);
+const NavBar = ({navValue, setNavValue}) => {
 
   const handleChange = (_e, newValue) => {
-    setValue(newValue);
+    setNavValue(newValue);
   };
-
   return (
     <AppBar position="static" color="transparent" style={{ position: "fixed", top: 0 }}>
       <Tabs
-        value={value}
+        value={navValue}
         onChange={handleChange}
         aria-label="Navigation"
         indicatorColor="primary"
         textColor="primary"
       >
-        <Tab label="Home" index={0} />
-        <Tab label="Favorites" index={1} />
+        <Tab label="Home" index={0} to="/" component={Link}/>
+        <Tab label="Favorites" to="/Favorites" index={1} component={Link}/>
       </Tabs>
     </AppBar>
   );

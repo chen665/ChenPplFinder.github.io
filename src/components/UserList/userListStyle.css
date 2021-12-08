@@ -1,0 +1,20 @@
+.addFilterBtn{
+    color:rgba(255,255,255,0.7)!important;
+    border-color:rgba(255,255,255,0.7)!important;
+}
+.addFilterBtn:hover{
+    color:rgba(255,255,255,1)!important;
+    border-color:rgba(255,255,255,0.9)!important;
+}
+.customForm{
+    display:flex!important;
+    flex-direction: row!important;
+    justify-content: center;
+    margin-top:10px;
+}
+.filterInput{
+    color:rgba(255,255,255,0.7)!important;
+    border-color:rgba(255,255,255,0.7)!important;
+    color:white;
+    background:white!important;
+}

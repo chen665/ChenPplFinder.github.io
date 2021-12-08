@@ -54,3 +54,8 @@ export const Filters = styled.div`
     margin-inline-end: 8px;
   }
 `;
+export const EmptyList = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size:22px;
+`;

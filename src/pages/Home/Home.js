@@ -8,7 +8,7 @@ import Cookies from 'js-cookie';
 
 const Home = ({getStoredFavoriteUsers,setNavValue}) => {
   const { users, isLoading } = usePeopleFetch();
-  setNavValue(0);
+  setTimeout(() => setNavValue(0), 0);
   return (
     <S.Home>
       <S.Content>
@@ -17,7 +17,7 @@ const Home = ({getStoredFavoriteUsers,setNavValue}) => {
             PplFinder
           </Text>
         </S.Header>
-        <UserList users={users} isLoading={isLoading} />
+        <UserList users={users} isLoading={isLoading} getStoredFavoriteUsers={getStoredFavoriteUsers}/>
       </S.Content>
     </S.Home>
   );

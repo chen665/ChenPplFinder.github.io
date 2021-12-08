@@ -4,6 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 const ThemeProvider = ({ children }) => {
   const overrides = {
+    
     MuiTab: {
       root: {
         backgroundColor: "#303030",
@@ -18,6 +19,7 @@ const ThemeProvider = ({ children }) => {
           type: "dark",
           primary: {
             main: "#84ffff",
+            contrastText: "#fff"
           },
           error: {
             main: "#f06292",
