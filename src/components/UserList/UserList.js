@@ -12,9 +12,12 @@ import RemoveIcon from '@material-ui/icons/Remove';
 
 import "./userListStyle.css"
 import * as S from "./style";
-  
+
+import * as C from "constant";
+
+
 const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) => {
-  let basicCountries = ['Brazil','Australia','Canad','Germany'];
+  let basicCountries = ['Brazil','Australia','Canada','Germany'];
   const [hoveredUserId, setHoveredUserId] = useState();
   const [filtersList, setfiltersList] = useState([]);
   const [favoriteUsers, setFavoriteUsers] = useState(getStoredFavoriteUsers());
@@ -84,11 +87,11 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
     users = getStoredFavoriteUsers();
   }
 
-  users = users.filter(user => filtersList.includes(user.location.country) || filtersList.length == 0);
+  users = users.filter(user => filtersList.map(v => v.toLowerCase()).includes(user.location.country.toLowerCase()) || filtersList.length == 0);
 
     return (
       
-      <S.UserList>
+      <S.UserList className="mainContainer">
         <S.Filters>
           {
             countryFilters.map((countryName,key) => {
@@ -104,7 +107,7 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
         {
           isInputVisible && (        
           <form className="customForm" onSubmit={handleSubmitFilter}>
-            <TextField  placeholder="New country filter" value={formInput} className="filterInput" required label="Country name" variant="outlined" onChange={handeInput}/>
+            <TextField  placeholder={C.TEXTS.NEW_FILTER} value={formInput} className="filterInput" required label="Country name" variant="outlined" onChange={handeInput}/>
             <Button type="submit" variant="contained" color="primary" className="submitFilterBtn"><CheckIcon /></Button>
           </form>
         )}
@@ -147,7 +150,7 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
             </S.SpinnerWrapper>
           )}
         {users.length === 0 && !isLoading && (
-          <S.EmptyList>No users to show</S.EmptyList>
+          <S.EmptyList>{C.TEXTS.NO_USERS}</S.EmptyList>
         )}
 
         </S.List>

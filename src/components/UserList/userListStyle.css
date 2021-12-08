@@ -46,3 +46,6 @@
 .customForm .Mui-focused fieldset legend{
     display:none!important;
 }
+.mainContainer{
+    align-items: center!important;
+}

@@ -18,3 +18,7 @@ export const COLORS = {
   primary: "primary",
   secondary: "secondary",
 };
+export const TEXTS = {
+  NO_USERS: "No users to show",
+  NEW_FILTER: "New country filter"
+};
