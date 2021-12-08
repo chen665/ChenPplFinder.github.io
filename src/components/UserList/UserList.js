@@ -26,7 +26,10 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
   const [isInputVisible, setIsInputVisible] = useState(false);
 
   const isUserFavorite = (inputUser) => {
-    return favoriteUsers.find(user => user.login.uuid === inputUser.login.uuid);  
+    if(inputUser)
+    {
+      return favoriteUsers.find(user => user.login.uuid === inputUser.login.uuid);  
+    }
   };
   
   const handleMouseEnter = (index) => {
@@ -87,7 +90,7 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
     users = getStoredFavoriteUsers();
   }
 
-  users = users.filter(user => filtersList.map(v => v.toLowerCase()).includes(user.location.country.toLowerCase()) || filtersList.length == 0);
+  users = users.filter(user => filtersList.map(filter => filter.toLowerCase()).includes(user.location.country.toLowerCase()) || filtersList.length == 0);
 
     return (
       

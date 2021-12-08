@@ -4,9 +4,9 @@ import UserList from "components/UserList";
 import { usePeopleFetch } from "hooks";
 import * as S from "./style";
 
-const Home = ({getStoredFavoriteUsers,setNavValue}) => {
+const Home = ({getStoredFavoriteUsers,setNavValue,isFavoritesView}) => {
   const { users, isLoading } = usePeopleFetch();
-  setTimeout(() => setNavValue(0), 0);
+  setTimeout(() => setNavValue(isFavoritesView ? 1: 0), 0);
   return (
     <S.Home>
       <S.Content>
@@ -15,7 +15,7 @@ const Home = ({getStoredFavoriteUsers,setNavValue}) => {
             PplFinder
           </Text>
         </S.Header>
-        <UserList users={users} isLoading={isLoading} getStoredFavoriteUsers={getStoredFavoriteUsers}/>
+        <UserList users={!isFavoritesView ? users : []} isFavoritesView={isFavoritesView} isLoading={isLoading} getStoredFavoriteUsers={getStoredFavoriteUsers}/>
       </S.Content>
     </S.Home>
   );

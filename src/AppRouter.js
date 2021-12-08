@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { Home,Favorites } from "pages";
+import { Home } from "pages";
 import { ThemeProvider } from "theme";
 import NavBar from "components/NavBar";
 
@@ -19,8 +19,8 @@ const AppRouter = () => {
       <Router>
         <NavBar setNavValue={setNavValue} navValue={navValue}/>
         <Switch>
-          <Route exact path="/" component={()=><Home getStoredFavoriteUsers={getStoredFavoriteUsers} setNavValue={setNavValue}/>} />
-          <Route exact path="/Favorites" component={()=><Favorites  getStoredFavoriteUsers={getStoredFavoriteUsers} setNavValue={setNavValue}/>} />
+          <Route exact path="/" component={()=><Home isFavoritesView={false} getStoredFavoriteUsers={getStoredFavoriteUsers} setNavValue={setNavValue}/>} />
+          <Route exact path="/Favorites" component={()=><Home isFavoritesView={true}  getStoredFavoriteUsers={getStoredFavoriteUsers} setNavValue={setNavValue}/>} />
         </Switch>
       </Router>
     </ThemeProvider>
