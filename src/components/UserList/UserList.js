@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import CheckIcon from '@material-ui/icons/Check';
 import Add from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 import "./userListStyle.css"
 import * as S from "./style";
@@ -105,7 +106,10 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
               );
             })
           }
-          <Button variant="outlined" className="addFilterBtn" onClick={handleAddFilterBtn} color="primary"><Add /></Button>
+          <Button variant="outlined" className="addFilterBtn" onClick={handleAddFilterBtn} color="primary">
+            {isInputVisible ?  <RemoveIcon /> : <Add />}
+
+          </Button>
           
         </S.Filters>
         {
