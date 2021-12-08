@@ -19,7 +19,6 @@ const ThemeProvider = ({ children }) => {
           type: "dark",
           primary: {
             main: "#84ffff",
-            contrastText: "#fff"
           },
           error: {
             main: "#f06292",

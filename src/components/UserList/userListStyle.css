@@ -13,8 +13,36 @@
     margin-top:10px;
 }
 .filterInput{
-    color:rgba(255,255,255,0.7)!important;
     border-color:rgba(255,255,255,0.7)!important;
-    color:white;
     background:white!important;
+    border-top-left-radius:4px;
+    border-bottom-left-radius:4px;
+    color:black!important;
+
+}
+.MuiInputLabel-outlined.MuiInputLabel-shrink{
+    margin-top:8px;
+    background:none;
+}
+.MuiInputBase-input{color:black!important;}
+.submitFilterBtn{
+    background:rgb(25, 118, 210)!important;
+    border-top-left-radius:0!important;
+    border-bottom-left-radius:0!important;
+    height:100%!important;
+}
+/* .MuiFormLabel-root.Mui-Focused{
+    color:rgb(25, 118, 210)!important;
+} */
+.customForm label{
+    color:black!important;
+}
+.customForm .Mui-focused fieldset{
+    border-color:rgb(25, 118, 210)!important;
+    border-top-right-radius:0!important;
+    border-bottom-right-radius:0!important;
+    top:0!important;
+}
+.customForm .Mui-focused fieldset legend{
+    display:none!important;
 }

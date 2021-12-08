@@ -4,9 +4,8 @@ import Spinner from "components/Spinner";
 import CheckBox from "components/CheckBox";
 import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import FormControl from "@material-ui/core/FormControl";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import CheckIcon from '@material-ui/icons/Check';
 import Add from '@material-ui/icons/Add';
 
@@ -30,6 +29,7 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
   const [favoriteUsers, setFavoriteUsers] = useState(getStoredFavoriteUsers());
   const [countryFilters, setCountryFilters] = useState(basicCountries);
   const [formInput, setFormInput] = useState();
+  const [isInputVisible, setIsInputVisible] = useState(false);
 
   const isUserFavorite = (inputUser) => {
     return favoriteUsers.find(user => user.login.uuid === inputUser.login.uuid);  
@@ -74,7 +74,6 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
 
   const handeInput = (event) => {
     setFormInput(event.target.value);
-    console.log('submitted ' + event.target.value);
   };  
 
   const handleSubmitFilter = (event) => {
@@ -82,11 +81,17 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
     let tempFilters = [...countryFilters];
     tempFilters.push(formInput);
     setCountryFilters(tempFilters);
+    setFormInput("");
+  };  
+  
+  const handleAddFilterBtn = () => {
+    setIsInputVisible(!isInputVisible);
   };
   
   if(isFavoritesView){
     users = getStoredFavoriteUsers();
   }
+
   users = users.filter(user => filtersList.includes(user.location.country) || filtersList.length == 0);
 
     return (
@@ -100,17 +105,16 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
               );
             })
           }
-          {/* <CheckBox value="BR" label="Brazil" onChange={handleChange} />
-          <CheckBox value="AU" label="Australia" onChange={handleChange}/>
-          <CheckBox value="CA" label="Canada" onChange={handleChange}/>
-          <CheckBox value="DE" label="Germany" onChange={handleChange}/> */}
-          <Button variant="outlined" className="addFilterBtn" color="primary"><Add /></Button>
+          <Button variant="outlined" className="addFilterBtn" onClick={handleAddFilterBtn} color="primary"><Add /></Button>
           
         </S.Filters>
-        <form className="customForm" onSubmit={handleSubmitFilter}>
-            <TextField id="outlined-basic" className="filterInput" required label="Country name" variant="outlined" onChange={handeInput}/>
-            <Button type="submit" variant="contained" color="primary"><CheckIcon /></Button>
-        </form>
+        {
+          isInputVisible && (        
+          <form className="customForm" onSubmit={handleSubmitFilter}>
+            <TextField  placeholder="New country filter" value={formInput} className="filterInput" required label="Country name" variant="outlined" onChange={handeInput}/>
+            <Button type="submit" variant="contained" color="primary" className="submitFilterBtn"><CheckIcon /></Button>
+          </form>
+        )}
 
         <S.List>
           

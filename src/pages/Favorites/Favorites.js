@@ -1,6 +1,5 @@
 import React , { useState } from 'react';
 import Text from "components/Text";
-import Input from '@mui/material/Input';
 
 import UserList from "components/UserList";
 import { getStoredFavoriteUsers } from "hooks";

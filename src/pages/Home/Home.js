@@ -3,8 +3,6 @@ import Text from "components/Text";
 import UserList from "components/UserList";
 import { usePeopleFetch } from "hooks";
 import * as S from "./style";
-import TabPanel from '@material-ui/lab/TabPanel';
-import Cookies from 'js-cookie';
 
 const Home = ({getStoredFavoriteUsers,setNavValue}) => {
   const { users, isLoading } = usePeopleFetch();
