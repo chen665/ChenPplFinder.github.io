@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/ppl-finder/static/css/main.3394c660.chunk.css",
-    "main.js": "/ppl-finder/static/js/main.3164c0f6.chunk.js",
-    "main.js.map": "/ppl-finder/static/js/main.3164c0f6.chunk.js.map",
-    "runtime-main.js": "/ppl-finder/static/js/runtime-main.e4381dea.js",
-    "runtime-main.js.map": "/ppl-finder/static/js/runtime-main.e4381dea.js.map",
-    "static/js/2.43e1d67d.chunk.js": "/ppl-finder/static/js/2.43e1d67d.chunk.js",
-    "static/js/2.43e1d67d.chunk.js.map": "/ppl-finder/static/js/2.43e1d67d.chunk.js.map",
-    "index.html": "/ppl-finder/index.html",
-    "static/css/main.3394c660.chunk.css.map": "/ppl-finder/static/css/main.3394c660.chunk.css.map",
-    "static/js/2.43e1d67d.chunk.js.LICENSE.txt": "/ppl-finder/static/js/2.43e1d67d.chunk.js.LICENSE.txt"
+    "main.css": "/ChenPplFinder.github.io/static/css/main.3394c660.chunk.css",
+    "main.js": "/ChenPplFinder.github.io/static/js/main.3164c0f6.chunk.js",
+    "main.js.map": "/ChenPplFinder.github.io/static/js/main.3164c0f6.chunk.js.map",
+    "runtime-main.js": "/ChenPplFinder.github.io/static/js/runtime-main.812b9c54.js",
+    "runtime-main.js.map": "/ChenPplFinder.github.io/static/js/runtime-main.812b9c54.js.map",
+    "static/js/2.9bd2a3f3.chunk.js": "/ChenPplFinder.github.io/static/js/2.9bd2a3f3.chunk.js",
+    "static/js/2.9bd2a3f3.chunk.js.map": "/ChenPplFinder.github.io/static/js/2.9bd2a3f3.chunk.js.map",
+    "index.html": "/ChenPplFinder.github.io/index.html",
+    "static/css/main.3394c660.chunk.css.map": "/ChenPplFinder.github.io/static/css/main.3394c660.chunk.css.map",
+    "static/js/2.9bd2a3f3.chunk.js.LICENSE.txt": "/ChenPplFinder.github.io/static/js/2.9bd2a3f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e4381dea.js",
-    "static/js/2.43e1d67d.chunk.js",
+    "static/js/runtime-main.812b9c54.js",
+    "static/js/2.9bd2a3f3.chunk.js",
     "static/css/main.3394c660.chunk.css",
     "static/js/main.3164c0f6.chunk.js"
   ]
