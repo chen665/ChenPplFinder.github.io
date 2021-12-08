@@ -4,9 +4,9 @@ import UserList from "components/UserList";
 import { usePeopleFetch } from "hooks";
 import * as S from "./style";
 
-const Home = ({getStoredFavoriteUsers,setNavValue,isFavoritesView}) => {
+const Home = ({getStoredFavoriteUsers, setNavValue, isFavoritesView, handleActivePage}) => {
   const { users, isLoading } = usePeopleFetch();
-  setTimeout(() => setNavValue(isFavoritesView ? 1: 0), 0);
+  handleActivePage(isFavoritesView);
   return (
     <S.Home>
       <S.Content>

@@ -14,13 +14,17 @@ const AppRouter = () => {
     return [];
   }
 
+  const handleActivePage = (isFavoritesView) => {
+    setNavValue((isFavoritesView ? 1 : 0), 0);
+  };
+
   return (
     <ThemeProvider>
       <Router>
         <NavBar setNavValue={setNavValue} navValue={navValue}/>
         <Switch>
-          <Route exact path="/" component={()=><Home isFavoritesView={false} getStoredFavoriteUsers={getStoredFavoriteUsers} setNavValue={setNavValue}/>} />
-          <Route exact path="/Favorites" component={()=><Home isFavoritesView={true}  getStoredFavoriteUsers={getStoredFavoriteUsers} setNavValue={setNavValue}/>} />
+          <Route exact path="/" component={()=><Home handleActivePage={handleActivePage} isFavoritesView={false} getStoredFavoriteUsers={getStoredFavoriteUsers} setNavValue={setNavValue}/>} />
+          <Route exact path="/Favorites" component={()=><Home handleActivePage={handleActivePage} isFavoritesView={true}   getStoredFavoriteUsers={getStoredFavoriteUsers} setNavValue={setNavValue}/>} />
         </Switch>
       </Router>
     </ThemeProvider>
