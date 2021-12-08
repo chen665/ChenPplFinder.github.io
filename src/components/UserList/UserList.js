@@ -12,16 +12,6 @@ import RemoveIcon from '@material-ui/icons/Remove';
 
 import "./userListStyle.css"
 import * as S from "./style";
-
-// const getStoredFavoriteUsers = () => {
-
-//   if(localStorage.getItem("favoriteUsersList")){
-//       console.log('local ' + localStorage.getItem("favoriteUsersList"));
-//       return JSON.parse(localStorage.getItem("favoriteUsersList"));
-//   }
-//   return [];
-
-// }
   
 const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) => {
   let basicCountries = ['Brazil','Australia','Canad','Germany'];
@@ -35,6 +25,7 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
   const isUserFavorite = (inputUser) => {
     return favoriteUsers.find(user => user.login.uuid === inputUser.login.uuid);  
   };
+  
   const handleMouseEnter = (index) => {
     setHoveredUserId(index);
   };
@@ -108,9 +99,7 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
           }
           <Button variant="outlined" className="addFilterBtn" onClick={handleAddFilterBtn} color="primary">
             {isInputVisible ?  <RemoveIcon /> : <Add />}
-
           </Button>
-          
         </S.Filters>
         {
           isInputVisible && (        

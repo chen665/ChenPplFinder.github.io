@@ -2,7 +2,6 @@ import React , { useState } from 'react';
 import Text from "components/Text";
 
 import UserList from "components/UserList";
-import { getStoredFavoriteUsers } from "hooks";
 import * as S from "../Home/style";
 const Favorites = ({setNavValue,getStoredFavoriteUsers}) => {
   setTimeout(() => setNavValue(1), 0)
