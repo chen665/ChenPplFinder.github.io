@@ -1,6 +1,6 @@
 {
-  "homepage": "https://chen665.github.io/ChenPplFinder.github.io/",
   "name": "ppl-finder",
+  "homepage": "https://chen665.github.io/PplFinder",
   "version": "1.0.7",
   "bin": "./bin/cli.js",
   "license": "MIT",

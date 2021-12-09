@@ -20,5 +20,7 @@ export const COLORS = {
 };
 export const TEXTS = {
   NO_USERS: "No users to show",
-  NEW_FILTER: "New country filter"
+  NEW_FILTER: "New country filter",
+  NEW_FILTER_BTN: "Add new filter",
+  HIDE_FILTER_BTN: "Hide field",
 };

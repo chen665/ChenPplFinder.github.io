@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 import CheckIcon from '@material-ui/icons/Check';
 import Add from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
@@ -103,9 +104,11 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
               );
             })
           }
+           <Tooltip title={isInputVisible ? C.TEXTS.HIDE_FILTER_BTN : C.TEXTS.NEW_FILTER_BTN}>
           <Button variant="outlined" className="addFilterBtn" onClick={handleAddFilterBtn} color="primary">
             {isInputVisible ?  <RemoveIcon /> : <Add />}
           </Button>
+          </Tooltip>
         </S.Filters>
         {
           isInputVisible && (        
