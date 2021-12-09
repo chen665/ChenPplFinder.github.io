@@ -53,7 +53,7 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
     }
 
     setFavoriteUsers(newFavoriteUsers);
-    localStorage.setItem("favoriteUsersList", JSON.stringify(newFavoriteUsers));
+    localStorage.setItem(C.LOCAL.FAVE_USERS, JSON.stringify(newFavoriteUsers));
 
   };
 
@@ -104,10 +104,10 @@ const UserList = ({ users, isLoading,isFavoritesView,getStoredFavoriteUsers}) =>
               );
             })
           }
-           <Tooltip title={isInputVisible ? C.TEXTS.HIDE_FILTER_BTN : C.TEXTS.NEW_FILTER_BTN}>
-          <Button variant="outlined" className="addFilterBtn" onClick={handleAddFilterBtn} color="primary">
-            {isInputVisible ?  <RemoveIcon /> : <Add />}
-          </Button>
+          <Tooltip title={isInputVisible ? C.TEXTS.HIDE_FILTER_BTN : C.TEXTS.NEW_FILTER_BTN}>
+            <Button variant="outlined" className="addFilterBtn" onClick={handleAddFilterBtn} color="primary">
+              {isInputVisible ?  <RemoveIcon /> : <Add />}
+            </Button>
           </Tooltip>
         </S.Filters>
         {

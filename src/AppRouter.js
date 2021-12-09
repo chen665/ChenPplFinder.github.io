@@ -4,12 +4,14 @@ import { Home } from "pages";
 import { ThemeProvider } from "theme";
 import NavBar from "components/NavBar";
 
+import * as C from "constant";
+
 const AppRouter = () => {
   const [navValue, setNavValue] = useState(0);
 
   const getStoredFavoriteUsers = () => {
-    if(localStorage.getItem("favoriteUsersList")){
-      return JSON.parse(localStorage.getItem("favoriteUsersList"));
+    if(localStorage.getItem(C.LOCAL.FAVE_USERS)){
+      return JSON.parse(localStorage.getItem(C.LOCAL.FAVE_USERS));
     }
     return [];
   }

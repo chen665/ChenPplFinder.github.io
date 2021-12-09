@@ -24,3 +24,6 @@ export const TEXTS = {
   NEW_FILTER_BTN: "Add new filter",
   HIDE_FILTER_BTN: "Hide field",
 };
+export const LOCAL = {
+  FAVE_USERS : "favoriteUsersList"
+};

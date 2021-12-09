@@ -1,12 +1,15 @@
-import React , { useState } from 'react';
+import React from 'react';
 import Text from "components/Text";
 import UserList from "components/UserList";
 import { usePeopleFetch } from "hooks";
+
 import * as S from "./style";
 
 const Home = ({getStoredFavoriteUsers, setNavValue, isFavoritesView, handleActivePage}) => {
   const { users, isLoading } = usePeopleFetch();
+
   handleActivePage(isFavoritesView);
+
   return (
     <S.Home>
       <S.Content>
